@@ -4,7 +4,7 @@ Functionality based on Arcadia "Piggyback" ROM board
 Attaches to 86-pin card edge on Amiga 500 motherboard  
 ROM in the 0x800000-0x9DFFFF range with 2x 27C080 EPROMs  
 NVRAM in the 0x9E0000-0x9FFFFF range with DS1220  
-0xF00000-0xF1FFFF (address Amiga Kickstart attempts to execute) mirrored to ROM (addresses 0x180000 to 0x19FFFF)  
+0xF00000-0xF1FFFF (address Amiga Kickstart attempts to execute) mapped to ROM (ROM offset 0x180000 to 0x19FFFF, i.e. same as addresses 0x980000-0x99FFFF)  
 Uses GAL16V8 to decode addresses
 
 ![assembled](assembled.jpg)
