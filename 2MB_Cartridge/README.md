@@ -14,5 +14,6 @@ NVRAM seems to need 150ns or faster
 -original cartridge used DS1220Y-150  
 -DS1220Y-200 causes glitches on both new cartridge and original "Piggyback"  
 -FRAM based 6116 NVRAM seems to work fine  
+See ROM directory for notes on building EPROM images
 
 Tested with female card edge connector: TE P/N 1-5530843-0, though I expect it would work with EDAC P/N 345-086-540-201 or 345-086-520-202, or other 86-pin 0.1" female card edge connectors compatible with 0.062" thick PCBs.
