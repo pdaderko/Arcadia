@@ -7,6 +7,7 @@ NVRAM in the 0x9E0000-0x9FFFFF range with DS1220
 0xF00000-0xF1FFFF (address Amiga Kickstart attempts to execute) mirrored to ROM (addresses 0x180000 to 0x19FFFF)  
 Uses GAL16V8 to decode addresses
 
+!(assembled.jpg)
 
 Notes:  
 NVRAM seems to need 150ns or faster  
