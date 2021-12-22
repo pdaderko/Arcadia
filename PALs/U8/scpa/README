@@ -1,0 +1,5 @@
+Arcadia "piggyback" cartridge original security PAL dump from Magic Johnson's Fast Break
+PAL16L8 was unlocked and simply read
+Equations were extracted from .jed dump using MAME's jedutil
+Same security PAL as all games using SCPA ROMs
+Original dumped PAL .jed file converted for GAL16V8 is also included

@@ -1,0 +1,2 @@
+Recreated from dumped logic equations for "piggyback" board with SCPA BIOS (BIOS in BANK1 mapped to 0x980000, BANK2 mapped to 0x800000)
+This .jed file is for a PAL8L14 and is untested, though the same equations were used for the GAL replacement

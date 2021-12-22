@@ -1,0 +1,66 @@
+Name       ARC_U8;
+Partno     XXXXX;
+Date       XX/XX/XX;
+Revision   XX;
+Designer   XXXXX;
+Company    XXXXX;
+Assembly   XXXXX;
+Location   XXXXX;
+Device     g16v8;
+
+
+/**********************************************************************/
+/*Arcadia Security GAL                                                */
+/*Swaps bits of BANK1 LO ROM                                          */
+/*This version swaps no bits (76543210 -> 76543210)                   */
+/**********************************************************************/
+
+/** Inputs **/
+
+PIN     1   = i1;  /* /CE Input */
+PIN     2   = i2;  /* D0 Input */
+PIN     3   = i3;  /* D1 Input */
+PIN     4   = i4;  /* D2 Input */
+PIN     5   = i5;  /* D3 Input */
+PIN     6   = i6;  /* D4 Input */
+PIN     7   = i7;  /* D5 Input */
+PIN     8   = i8;  /* D6 Input */
+PIN     9   = i9;  /* D7 Input */
+PIN     11  = i11; /* /OE Input */
+
+/** Outputs **/
+
+PIN    12   = o12; /* D0 Output */
+PIN    13   = o13; /* D1 Output */
+PIN    14   = o14; /* D2 Output */
+PIN    15   = o15; /* D3 Output */
+PIN    16   = o16; /* D4 Output */
+PIN    17   = o17; /* D5 Output */
+PIN    18   = o18; /* D6 Output */
+PIN    19   = o19; /* D7 Output */
+
+/** Logic Equations **/
+
+!o12 = !i2;             /* D0 */
+o12.oe = !i1 & !i11;
+
+!o13 = !i3;             /* D1 */
+o13.oe = !i1 & !i11;
+
+!o14 = !i4;             /* D2 */
+o14.oe = !i1 & !i11;
+
+!o15 = !i5;             /* D3 */
+o15.oe = !i1 & !i11;
+
+!o16 = !i6;             /* D4 */
+o16.oe = !i1 & !i11;
+
+!o17 = !i7;             /* D5 */
+o17.oe = !i1 & !i11;
+
+!o18 = !i8;             /* D6 */
+o18.oe = !i1 & !i11;
+
+!o19 = !i9;             /* D7 */
+o19.oe = !i1 & !i11;

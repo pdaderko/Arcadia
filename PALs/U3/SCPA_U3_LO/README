@@ -1,0 +1,3 @@
+PAL8L14 converted to 2x GAL16V8 (for use with GAL8L14 adapter board)
+This is the low 7 output bits
+Recreated from dumped logic equations for "piggyback" board with SCPA BIOS (BIOS in BANK1 mapped to 0x980000, BANK2 mapped to 0x800000)

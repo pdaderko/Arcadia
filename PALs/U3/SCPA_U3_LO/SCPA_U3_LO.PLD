@@ -1,0 +1,48 @@
+Name       U3_LO;
+Partno     XXXXX;
+Date       XX/XX/XX;
+Revision   XX;
+Designer   XXXXX;
+Company    XXXXX;
+Assembly   XXXXX;
+Location   XXXXX;
+Device     g16v8;
+
+
+/**********************************************************************/
+/*Arcadia Address Decoder                                             */
+/*Lower half of original PAL8L14 for use with adapter board           */
+/*For SCPA BIOS games                                                 */
+/*(BIOS in BANK1 mapped to 0x980000, BANK2 mapped to 0x800000)        */
+/**********************************************************************/
+
+/** Inputs **/
+
+PIN     2   = A17;
+PIN     3   = A18;
+PIN     4   = A19;
+PIN     5   = A20;
+PIN     6   = A22;
+PIN     7   = A21;
+PIN     8   = A23;
+PIN     9   = AS;
+
+/** Outputs **/
+
+PIN    12   = BANK1A;
+PIN    13   = BANK2;
+PIN    14   = BANK3;
+PIN    15   = BANK4;
+PIN    16   = BANK5;
+PIN    17   = BANK6;
+PIN    18   = BANK7;
+
+/** Logic Equations **/
+
+!BANK1A = A23 & !A22 & !A21 & A20  & A19  & !A18 & !A17 & !AS; /* 0x980000-0x99FFFF */
+!BANK2  = A23 & !A22 & !A21 & !A20 & !A19 & !A18 & !A17 & !AS; /* 0x800000-0x81FFFF */
+!BANK3  = A23 & !A22 & !A21 & !A20 & !A19 & !A18 & A17  & !AS; /* 0x820000-0x83FFFF */
+!BANK4  = A23 & !A22 & !A21 & !A20 & !A19 & A18  & !A17 & !AS; /* 0x840000-0x85FFFF */
+!BANK5  = A23 & !A22 & !A21 & !A20 & !A19 & A18  & A17  & !AS; /* 0x860000-0x87FFFF */
+!BANK6  = A23 & !A22 & !A21 & !A20 & A19  & !A18 & !A17 & !AS; /* 0x880000-0x89FFFF */
+!BANK7  = A23 & !A22 & !A21 & !A20 & A19  & !A18 & A17  & !AS; /* 0x8A0000-0x8BFFFF */

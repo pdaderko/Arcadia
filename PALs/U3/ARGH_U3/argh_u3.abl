@@ -1,0 +1,46 @@
+MODULE abelcpl
+TITLE 'ARGH U3'
+abelcpl DEVICE 'P8L14';
+
+"inputs
+A17       pin 3;
+A18       pin 4;
+A19       pin 5;
+A20       pin 6;
+A22       pin 7;
+A21       pin 8;
+A23       pin 9;
+AS        pin 10;
+
+"outputs
+BANK1A   pin 1 istype 'com';
+BANK2    pin 2 istype 'com';
+BANK3    pin 11 istype 'com';
+BANK4    pin 13 istype 'com';
+BANK5    pin 14 istype 'com';
+BANK6    pin 15 istype 'com';
+BANK7    pin 16 istype 'com';
+BANK8    pin 17 istype 'com';
+BANK9    pin 18 istype 'com';
+BANK10   pin 19 istype 'com';
+BANK11   pin 20 istype 'com';
+BANK12   pin 21 istype 'com';
+NVRAM    pin 22 istype 'com';
+BANK1B   pin 23 istype 'com';
+
+EQUATIONS
+!BANK1A = A23 & !A22 & !A21 & !A20 & !A19 & !A18 & !A17 & !AS; " 0x800000-0x81FFFF
+!BANK2  = A23 & !A22 & !A21 & !A20 & !A19 & !A18 & A17  & !AS; " 0x820000-0x83FFFF
+!BANK3  = A23 & !A22 & !A21 & !A20 & !A19 & A18  & !A17 & !AS; " 0x840000-0x85FFFF
+!BANK4  = A23 & !A22 & !A21 & !A20 & !A19 & A18  & A17  & !AS; " 0x860000-0x87FFFF
+!BANK5  = A23 & !A22 & !A21 & !A20 & A19  & !A18 & !A17 & !AS; " 0x880000-0x89FFFF
+!BANK6  = A23 & !A22 & !A21 & !A20 & A19  & !A18 & A17  & !AS; " 0x8A0000-0x8BFFFF
+!BANK7  = A23 & !A22 & !A21 & !A20 & A19  & A18  & !A17 & !AS; " 0x8C0000-0x8DFFFF
+!BANK8  = A23 & !A22 & !A21 & !A20 & A19  & A18  & A17  & !AS; " 0x8E0000-0x8FFFFF
+!BANK9  = A23 & !A22 & !A21 & A20  & !A19 & !A18 & !A17 & !AS; " 0x900000-0x91FFFF
+!BANK10 = A23 & !A22 & !A21 & A20  & !A19 & !A18 & A17  & !AS; " 0x920000-0x93FFFF
+!BANK11 = A23 & !A22 & !A21 & A20  & !A19 & A18  & !A17 & !AS; " 0x940000-0x95FFFF
+!BANK12 = A23 & !A22 & !A21 & A20  & !A19 & A18  & A17  & !AS; " 0x960000-0x97FFFF
+!NVRAM  = A23 & !A22 & !A21 & A20  & A19  & A18  & A17  & !AS; " 0x9E0000-0x9FFFFF
+!BANK1B = A23 & A22  & A21  & A20  & !A19 & !A18 & !A17 & !AS; " 0xF00000-0xF1FFFF
+END
