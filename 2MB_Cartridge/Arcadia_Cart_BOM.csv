@@ -1,0 +1,8 @@
+Designator,Quantity,Comment,Install,Notes
+,,,,
+C1,1,10uF,10uF PTH Electrolytic Capacitor,Such as ESK106M063AC3FA
+"C2, C3, C4, C5",4,0.1uF,0.1uF PTH Ceramic Capacitor,Such as C320C104K5R5TA7317
+J1,1,1-5530843-0,86-pin 0.1” female card edge connector,"1-5530843-0 tested, 345-086-540-201 or 345-086-520-202 or other 0.1” 86-pin female card edge connectors should work as well"
+U1,1,GAL16V8,GAL16V8,GAL16V8 programmed with ARC_2MB.jed file
+"U2, U3",2,27C080,27C080,"27C080 or 27C801, or smaller EPROMs should work as well if using smaller game ROMs"
+U4,1,DS1220,DS1220Y-150,"Appears that this must be <150ns, FRAM based 6116 replacement seems to work as well"
