@@ -1,0 +1,24 @@
+27C080 EPROM maps to addresses 0x800000 to 0x9DFFFF (last 128KB of ROM is unavailable because it's mapped to NVRAM)
+
+Original game ROMs used 27C512s (64KB of data) in a bank of LO ROMs and HI ROMs
+Sets of LO ROM and HI ROM files should be concatenated from Game ROM 1 to N (where N is the number of ROMs in the ROM set, excluding the SCPA ROM if applicable).
+Concatenated LO ROM file goes to position U2 and HI ROM file goes to position U3
+Blank file (blank.bin) is provided for convenience to pad unused portions of the ROM with 0xFF
+The ROM expected to boot must be placed in the "slot" 13 (address 0x980000).
+-For SCPA games, this is the SCPA ROM
+-For Aaargh!, this is the first ROM (same ROM as already in "slot" 1)
+ROM(s) must be decrypted (where applicable) using the arcadia_conv utility
+-Games from "piggyback" boards have SCPA LO ROM encrypted, but game ROMs unencrypted
+-Exception is Aaargh!, which didn't use the SCPA ROM, and has its first LO ROM encrypted
+-Games from the TenPlay boards have their first game LO ROM encrypted
+
+
+Example ROM file generation commands (Windows command line using MAME ROM file names, similar functionality on Linux with "cat")
+
+Table Hockey:
+copy /b airh_1l_dec.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + scpa_01-lo_v3.0_dec.u16 + blank.bin + blank.bin + blank.bin airh_2mb_lo.bin
+copy /b airh_1h.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + blank.bin + scpa_01-hi_v3.0.u12 + blank.bin + blank.bin + blank.bin airh_2mb_hi.bin
+
+Aaargh!:
+copy /b argh-1-lo-11-28-87_dec.u16 + argh-2-lo-11-28-87.u15 + argh-3-lo-11-28-87.u14 + argh-4-lo-11-28-87.u13 + argh-5-lo-11-28-87.u24 + argh-6-lo-11-28-87.u23 + argh-7-lo-11-28-87.u22 + argh-8-lo-11-28-87.u21 + argh-9-lo-11-28-87.u32 + argh-10-lo-11-28-87.u31 + argh-11-lo-11-28-87.u30 + argh-12-lo-11-28-87.u29 + argh-1-lo-11-28-87_dec.u16 + blank.bin + blank.bin + blank.bin argh_2mb_lo.bin
+copy /b argh-1-hi-11-28-87.u12 + argh-2-hi-11-28-87.u11 + argh-3-hi-11-28-87.u10 + argh-4-hi-11-28-87.u9 + argh-5-hi-11-28-87.u20 + argh-6-hi-11-28-87.u19 + argh-7-hi-11-28-87.u18 + argh-8-hi-11-28-87.u17 + argh-9-hi-11-28-87.u28 + argh-10-hi-11-28-87.u27 + argh-11-hi-11-28-87.u26 + argh-12-hi-11-28-87.u25 + argh-1-hi-11-28-87.u12 + blank.bin + blank.bin + blank.bin argh_2mb_hi.bin
