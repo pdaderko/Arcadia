@@ -1,4 +1,4 @@
-# Arcadia Systems Amiga 500 based arcade PCB related files/projects
+# Arcadia Systems arcade PCB related projects
 
 Includes:
 - 2MB Cartridge, providing similar functionality to the original "piggyback" board, plugging directly into Amiga 500 "Zorro" connector, and uses only 2x EPROMs (up to 27C080 family)
