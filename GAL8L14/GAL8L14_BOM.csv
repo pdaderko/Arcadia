@@ -1,0 +1,5 @@
+Designator,Quantity,Comment,Install,Notes
+,,,,
+"C1, C2",2,2.2uF,2.2uF 0603 Capacitor,Optional
+U1,1,PAL8L14,24-Pin Header,Machine pin recommended (2x 12-pin SIP header OK)
+"U2, U3",2,GAL16V8,GAL16V8,"Programmed with appropriate U3_HI and U3_LO files, sockets recommended (machine pin SIP sockets OK)"
